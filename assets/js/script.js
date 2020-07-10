@@ -31,6 +31,14 @@ $("#submitrace").click(function(event) {
     $("#raceSlot").text(race);
 });
 
+//capture the selection to look up for race
+//look up race on the D&D API
+$("lookuprace").click(function(event) {
+    event.preventDefault();
+    race = $('#race :selected').text();
+    //api lookup race code here
+});
+
 //capture the submitted selection for class
 //pass class to an id to print on character sheet
 
@@ -38,6 +46,14 @@ $("#submitcls").click(function(event) {
     event.preventDefault();
     charcls = $('#charcls :selected').text();
     $("#clsSlot").text(charcls);
+});
+
+//capture the selection to look up for class
+//look up class on the D&D API
+$("lookupcharcls").click(function(event) {
+    event.preventDefault();
+    charcls = $('#charcls :selected').text();
+    //api lookup charcls code here
 });
 
 //capture the submitted selection for alignment
@@ -49,4 +65,10 @@ $("#submitalign").click(function(event) {
     $("#alignSlot").text(alignment);
 });
 
-
+//capture the selection to look up for alignment
+//look up alignment on the D&D API
+$("lookupalign").click(function(event) {
+    event.preventDefault();
+    alignment = $('#alignment :selected').text();
+    //api lookup alignment code here
+});
