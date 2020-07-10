@@ -1,3 +1,4 @@
+
 var diceRollA, diceRollB, diceRollC, diceRollD;
 
 function diceRoll() {
@@ -20,6 +21,7 @@ function diceRoll() {
 diceRoll();
 
 //strength = diceRoll();
+
 //define variables for other information
 var charcls ='';
 var race='';
@@ -51,4 +53,5 @@ $("#submitalign").click(function(event) {
     alignment = $('#alignment :selected').text();
     $("#alignSlot").text(alignment);
 });
+
 
