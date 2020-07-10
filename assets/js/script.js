@@ -1,3 +1,22 @@
+
+var diceRollA, diceRollB, diceRollC, diceRollD;
+
+function diceRoll() {
+    diceRollA = 1+(Math.floor(Math.random() * 6));
+    diceRollB = 1+(Math.floor(Math.random() * 6));
+    diceRollC = 1+(Math.floor(Math.random() * 6));
+    diceRollD = 1+(Math.floor(Math.random() * 6));
+
+    console.log({diceRollA, diceRollB, diceRollC, diceRollD})
+
+    //put sorting function here
+    return diceRollA+diceRollB+diceRollC+diceRollD
+}
+
+diceRoll();
+
+//strength = diceRoll();
+
 //define variables for other information
 var charcls ='';
 var race='';
@@ -29,4 +48,5 @@ $("#submitalign").click(function(event) {
     alignment = $('#alignment :selected').text();
     $("#alignSlot").text(alignment);
 });
+
 
