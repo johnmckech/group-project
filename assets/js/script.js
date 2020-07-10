@@ -7,9 +7,14 @@ function diceRoll() {
     diceRollD = 1+(Math.floor(Math.random() * 6));
 
     console.log({diceRollA, diceRollB, diceRollC, diceRollD})
-
+    var result = [diceRollA,diceRollB,diceRollC,diceRollD];
+    result.sort();
+    console.log(result);
+    result.shift()
     //put sorting function here
     return diceRollA+diceRollB+diceRollC+diceRollD
+
+
 }
 
 diceRoll();
