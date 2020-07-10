@@ -12,11 +12,11 @@ function diceRoll() {
     result.sort();
     console.log(result);
     result.shift()
-    //put sorting function here
-    return diceRollA+diceRollB+diceRollC+diceRollD
 
+    var sum = diceRollA + diceRollB + diceRollC + diceRollD
+    console.log(sum);
 
-}
+} 
 
 diceRoll();
 
