@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Document</title>
 </head>
@@ -14,49 +15,27 @@
 
     <header>
         <h1><a href="./index.html">DnD Generator</a></h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#name">Name</a>
-                </li>
-                <li>
-                    <a href="#class">Class</a>
-                </li>
-                <li>
-                    <a href="#race">Race</a>
-                </li>
-                <li>
-                    <a href="alignment">Alignment</a>
-                </li>
-            </ul>
-        </nav>
     </header>
 
     <!-- MAIN SECTION (GRID) -->
 
     <section class="main">
-        
-        <!-- GRID LAYOUT -->
+        <div class="main-form">
+            <h3>Generate your DnD Character</h3>
+            <br/>
+        <!-- Add form element -->
+        <form>
+            <label for="name">Enter full name:</label>
+            <input type="text" placeholder="Your Name" name="name" id="name" class="form-input"/>
 
-        <div class="wrapper">
+            <button type="submit">
+                Click here to generate your name!
+            </button>
 
-            <!-- RANDOM NAME GENERATOR -->
+            <br/><br/>
 
-            <div id="name" class="flex-row slot1">
-                <div class="about-panel">
-                    <h2 class="section-title">
-                        Random Name Generator
-                    </h2>
-                </div>
-                <div class="primary-border"></div>
-            </div>
-
-            <!-- COLUMN 1 CLASS TYPE -->
-
-
-
+        </form>
         </div>
-
     </section>
 
     
