@@ -62,7 +62,7 @@ footer {
 }
 
 .main-form {
-    background-color: #762d2dcc;
+    background-color: grey;
     padding: 20px;
     color: var(--secondary-color);
     border-style: solid;
