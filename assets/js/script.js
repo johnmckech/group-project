@@ -8,15 +8,24 @@ function diceRoll() {
     diceRollD = 1+(Math.floor(Math.random() * 6));
 
     console.log({diceRollA, diceRollB, diceRollC, diceRollD})
-    var result = [diceRollA,diceRollB,diceRollC,diceRollD];
+    var result = [Number(diceRollA),Number(diceRollB),Number(diceRollC),Number(diceRollD)];
     result.sort();
     console.log(result);
-    result.shift()
+    result.map(Number)
+    console.log(result)
+    resultWithoutLowest = result.slice(1)
+    console.log({resultWithoutLowest});
+    var sum = {resultWithoutLowest}
+    console.log(sum)
 
-    var sum = diceRollA + diceRollB + diceRollC + diceRollD
-    console.log(sum);
+    
+    //need to figure how to turn result into numbers
 
-} 
+    document.getElementById
+
+}
+
+
 
 diceRoll();
 
