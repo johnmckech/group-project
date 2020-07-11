@@ -5,7 +5,7 @@
 }
 
 :root {
-    --primary-color: red;
+    --primary-color: #762d2dcc;
     --secondary-color: white;
     --tertiary-color: gold;
 }
@@ -13,48 +13,46 @@
 body {
     color: var(--tertiary-color);
     font-family: Helvetica, Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 header {
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    background-image: url("../images/dnd.jpg");
-    background-size: cover;
-    background-position: 80%;
-    background-attachment: fixed;
-    z-index: 9999; 
+    padding: 25px 25px;
+    background: var(--primary-color);
+    border-bottom: 5px solid var(--secondary-color);
 }
 
 header h1 {
     font-weight: bold;
     font-size: 3.0vw;
     color: var(--secondary-color);
-    margin: 0;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 header a {
     text-decoration: none;
     color: var(--secondary-color);
-    align-items: center;
+}
+
+header p {
+    color: var(--tertiary-color);
+    margin: 5px 0 20px;
+    font-size: 2.0vw;
 }
 
 /* MAIN SECTION */
 
 .main {
-    background-image: url("../images/dnd.jpg");
-    background-size: cover;
-    background-position: 80%;
-    background-attachment: fixed;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
+    background-image: url("../images/dnd.jpg");
+    background-size: cover;
+    background-position: 80%;
+    background-attachment: fixed;
 }
 
 .main-form {
