@@ -25,7 +25,6 @@ function diceRoll(attributes) {
     })
     console.log(rollTotal);
     document.getElementById(attributes).textContent = rollTotal 
-
 }
 
 
