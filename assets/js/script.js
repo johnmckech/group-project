@@ -19,11 +19,12 @@ function diceRoll() {
     var sum = {resultWithoutLowest}
     console.log(sum)
 
+    var rollTotal = resultWithoutLowest.reduce(function(accumulator, currentValue) {
+        return accumulator + currentValue
+    })
+    console.log(rollTotal);
+    document.getElementById("").textContent = rollTotal
     
-    //need to figure how to turn result into numbers
-
-    document.getElementById
-
 }
 
 
