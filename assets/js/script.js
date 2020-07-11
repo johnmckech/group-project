@@ -2,7 +2,8 @@
 var diceRollA, diceRollB, diceRollC, diceRollD;
 
 
-function diceRoll() {
+function diceRoll(attributes) {
+    console.log(attributes);
     diceRollA = 1+(Math.floor(Math.random() * 6));
     diceRollB = 1+(Math.floor(Math.random() * 6));
     diceRollC = 1+(Math.floor(Math.random() * 6));
@@ -23,8 +24,8 @@ function diceRoll() {
         return accumulator + currentValue
     })
     console.log(rollTotal);
-    document.getElementById("").textContent = rollTotal
-    
+    document.getElementById(attributes).textContent = rollTotal 
+
 }
 
 
