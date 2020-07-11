@@ -42,6 +42,15 @@ header p {
     font-size: 2.0vw;
 }
 
+footer {
+    width: 100%;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 2.0vw;
+    padding: 20px;
+    border-top: 5px solid var(--secondary-color);
+}
+
 /* MAIN SECTION */
 
 .main {
@@ -49,10 +58,7 @@ header p {
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
-    background-image: url("../images/dnd.jpg");
-    background-size: cover;
-    background-position: 80%;
-    background-attachment: fixed;
+    background: var(--tertiary-color);
 }
 
 .main-form {
@@ -92,6 +98,11 @@ header p {
 .main-form p {
     margin: 5px 0 15px 0;
 }
+
+form .form-group {
+    margin: 10px 6px 10px 0;
+    flex: 1;
+  }
 
 .form-input {
     border: 1px solid var(--secondary-color);
