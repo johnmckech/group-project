@@ -10,7 +10,15 @@
     <header>
         Hello World!
     </header>
-
+    <div id="names">
+        <label for="name">Enter player name:</label>
+        <input type="text" placeholder="Player name" name="playerName" id="playerName" class="form-input" />
+        <button type="submit" id="submitName">Submit</button> 
+        <br />
+        <label for="charname">Enter character name:</label>
+        <input type="text" placeholder="Character name" name="charname" id="charname" class="form-input" />   
+        <button type="submit" id="submitCharName">Submit</button>    
+    </div>
     <div id="otherInfo">
     <form id="raceForm">
         <div id="raceFormInput">
@@ -18,7 +26,6 @@
         <select id="race">
           <option value="dragonborn">Dragonborn</option>    
           <option value="dwarf">Dwarf</option>
-          <option value="elf">Elf</option>
           <option value="gnome">Gnome</option>
           <option value="half-elf">Half-elf</option>
           <option value="half-orc">Half-orc</option>
@@ -65,11 +72,22 @@
     </select>
     <br><br>
     <button id="submitalign">Choose</button>
-    <button id="lookupalign">Look up</button>
     </div>
        </div>
     </form>
     <div id="playerSheet">
+        <div id="nameSlots">
+            <p>Player Name: <span id="nameSlot"></span></p>
+            <p>Character Name: <span id="charnameSlot"></span></p>
+        </div>
+        <div id="attributes">
+            <p>Strength: <span id="str"></span></p>
+            <p>Dexterity: <span id="dex"></span></p>
+            <p>Constitution: <span id="con"></span></p>
+            <p>Intelligence: <span id="int"></span></p>
+            <p>Wisdom: <span id="wis"></span></p>
+            <p>Charisma: <span id="cha"></span></p>
+        </div>
         <p>Race: <span id="raceSlot"></span></p>
         <p>Class: <span id="clsSlot"></span></p>
         <p>Alignment: <span id="alignSlot"></span></p>

@@ -1,21 +1,38 @@
 
 var diceRollA, diceRollB, diceRollC, diceRollD;
 
+
 function diceRoll() {
     diceRollA = 1+(Math.floor(Math.random() * 6));
     diceRollB = 1+(Math.floor(Math.random() * 6));
     diceRollC = 1+(Math.floor(Math.random() * 6));
     diceRollD = 1+(Math.floor(Math.random() * 6));
 
-    console.log({diceRollA, diceRollB, diceRollC, diceRollD})
-
-    //put sorting function here
-    return diceRollA+diceRollB+diceRollC+diceRollD
 }
 
 diceRoll();
 
 //strength = diceRoll();
+
+//define variables for names
+var playerName="";
+var charname="";
+
+//capture submitted names
+//pass names to an id to print on character CSSStyleSheet
+
+
+$("#submitName").click(function(event) { 
+    event.preventDefault();
+    playerName = $('#playerName').val();
+    $("#nameSlot").text(playerName);
+});
+
+$("#submitCharName").click(function(event) { 
+    event.preventDefault();
+    charname = $('#charname').val();
+    $("#charnameSlot").text(charname);
+});
 
 //define variables for other information
 var charcls ='';
@@ -65,10 +82,3 @@ $("#submitalign").click(function(event) {
     $("#alignSlot").text(alignment);
 });
 
-//capture the selection to look up for alignment
-//look up alignment on the D&D API
-$("lookupalign").click(function(event) {
-    event.preventDefault();
-    alignment = $('#alignment :selected').text();
-    //api lookup alignment code here
-});
