@@ -12,71 +12,83 @@
     <header>
         Hello World!
     </header>
-    <div id="name">
-        <button id="btn">
-
-        </button>
-
+    <div id="names">
+        <label for="name">Enter player name:</label>
+        <input type="text" placeholder="Player name" name="playerName" id="playerName" class="form-input" />
+        <button type="submit" id="submitName">Submit</button> 
+        <br />
+        <label for="charname">Enter character name:</label>
+        <input type="text" placeholder="Character name" name="charname" id="charname" class="form-input" />   
+        <button type="submit" id="submitCharName">Submit</button>    
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
-
     <div id="otherInfo">
-        <form id="raceForm">
-            <div id="raceFormInput">
-                <label for="race">Choose a race:</label>
-                <select id="race">
-                    <option value="dragonborn">Dragonborn</option>
-                    <option value="dwarf">Dwarf</option>
-                    <option value="gnome">Gnome</option>
-                    <option value="half-elf">Half-elf</option>
-                    <option value="half-orc">Half-orc</option>
-                    <option value="human">Human</option>
-                    <option value="tiefling">Tiefling</option>
-                </select>
-                <br /> <br />
-                <button id="submitrace">Choose</button>
-            </div>
-        </form>
-        <div class="charcls" class="d-none">
-            <label for="charcls">Choose a class:</label>
-            <select name="charcls" id="charcls">
-                <option value="barbarian">Barbarian</option>
-                <option value="bard">Bard</option>
-                <option value="cleric">Cleric</option>
-                <option value="druid">Druid</option>
-                <option value="fighter">Fighter</option>
-                <option value="monk">Monk</option>
-                <option value="paladin">Paladin</option>
-                <option value="ranger">Ranger</option>
-                <option value="rogue">Rogue</option>
-                <option value="sorcerer">Sorcerer</option>
-                <option value="warlock">Warlock</option>
-                <option value="wizard">Wizard</option>
-            </select>
-            <br><br>
-            <button id="submitcls">Choose</button>
+    <form id="raceForm">
+        <div id="raceFormInput">
+        <label for="race">Choose a race:</label>
+        <select id="race">
+          <option value="dragonborn">Dragonborn</option>    
+          <option value="dwarf">Dwarf</option>
+          <option value="gnome">Gnome</option>
+          <option value="half-elf">Half-elf</option>
+          <option value="half-orc">Half-orc</option>
+          <option value="human">Human</option>
+          <option value="tiefling">Tiefling</option>
+        </select>
+        <br /> <br />
+        <button id="submitrace">Choose</button>
+        <button id="lookuprace">Look up</button>
         </div>
-        <div class="alignment" class="d-none">
-            <label for="alignment">Choose an alignment:</label>
-            <select name="alignment" id="alignment">
-                <option value="lawful-good">Lawful Good</option>
-                <option value="neutral-good">Neutral Good</option>
-                <option value="chaotic-good">Chaotic Good</option>
-                <option value="lawful-neutral">Lawful Neutral</option>
-                <option value="true-neutral">True Neutral</option>
-                <option value="chotic-neutral">Chaotic Neutral</option>
-                <option value="lawful-evil">Lawful Evil</option>
-                <option value="neutral-evil">Neutral Evil</option>
-                <option value="chaotic-evil">Chaotic Evil</option>
-            </select>
-            <br><br>
-            <button id="submitalign">Choose</button>
-        </div>
+    </form>
+    <div class="charcls" class="d-none">
+        <label for="charcls">Choose a class:</label>
+        <select name="charcls" id="charcls">
+          <option value="barbarian">Barbarian</option>    
+          <option value="bard">Bard</option>
+          <option value="cleric">Cleric</option>
+          <option value="druid">Druid</option>
+          <option value="fighter">Fighter</option>
+          <option value="monk">Monk</option>
+          <option value="paladin">Paladin</option>
+          <option value="ranger">Ranger</option>
+          <option value="rogue">Rogue</option>
+          <option value="sorcerer">Sorcerer</option>
+          <option value="warlock">Warlock</option>
+          <option value="wizard">Wizard</option>
+        </select>
+        <br><br>
+        <button id="submitcls">Choose</button>
+        <button id="lookupcharcls">Look up</button>
+    </div>
+    <div class="alignment" class="d-none">
+    <label for="alignment">Choose an alignment:</label>
+    <select name="alignment" id="alignment">
+      <option value="lawful-good">Lawful Good</option>    
+      <option value="neutral-good">Neutral Good</option>
+      <option value="chaotic-good">Chaotic Good</option>
+      <option value="lawful-neutral">Lawful Neutral</option>
+      <option value="true-neutral">True Neutral</option>
+      <option value="chotic-neutral">Chaotic Neutral</option>
+      <option value="lawful-evil">Lawful Evil</option>
+      <option value="neutral-evil">Neutral Evil</option>
+      <option value="chaotic-evil">Chaotic Evil</option>
+    </select>
+    <br><br>
+    <button id="submitalign">Choose</button>
     </div>
     </form>
     <div id="playerSheet">
+        <div id="nameSlots">
+            <p>Player Name: <span id="nameSlot"></span></p>
+            <p>Character Name: <span id="charnameSlot"></span></p>
+        </div>
+        <div id="attributes">
+            <p>Strength: <span id="str"></span></p>
+            <p>Dexterity: <span id="dex"></span></p>
+            <p>Constitution: <span id="con"></span></p>
+            <p>Intelligence: <span id="int"></span></p>
+            <p>Wisdom: <span id="wis"></span></p>
+            <p>Charisma: <span id="cha"></span></p>
+        </div>
         <p>Race: <span id="raceSlot"></span></p>
         <p>Class: <span id="clsSlot"></span></p>
         <p>Alignment: <span id="alignSlot"></span></p>
