@@ -55,6 +55,7 @@ function diceRoll(attributes) {
     })
     console.log(rollTotal);
     document.getElementById(attributes).textContent = rollTotal
+    event.preventDefault();
 }
 
 
@@ -115,10 +116,12 @@ $("#lookuprace").click(function (event) {
         .then(function () {
             $("#racequeryreturn").empty();
             var raceQueryLink = dndApiUrl + "races/" + race;
-            var link = 
-            $("#racequeryreturn").append("Race Info Lookup");
+            console.log(raceQueryLink);
+            var link = document.createElement('a');
+            link.textContent = "Race Info";
+            link.href = raceQueryLink;
+            $("#racequeryreturn").append(link);
         })
-
 });
 
 //capture the submitted selection for class
@@ -134,13 +137,16 @@ $("#submitcls").click(function (event) {
 //look up class on the D&D API
 $("#lookupcharcls").click(function (event) {
     event.preventDefault();
-    charcls = $('#charcls :selected').text();
-    fetch(dndApiUrl + "classes/" + charcls)
+    charcls = $('#charcls option:selected').val();
+    $.get(dndApiUrl + "classes/" + charcls)
         .then(function (response) {
-            return response.json
-        })
-        .then(function (response) {
-            console.log(response.name);
+            $("#charclsqueryreturn").empty();
+            var clsQueryLink = dndApiUrl + "classes/" + charcls;
+            console.log(clsQueryLink);
+            var link = document.createElement('a');
+            link.textContent = "Class Info";
+            link.href = clsQueryLink;
+            $("#charclsqueryreturn").append(link);
         })
 });
 
