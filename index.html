@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>DnD Generator</title>
 </head>
 
 <body>
 
+    <!-- HEADER AND CHARACTER GENERATOR -->
+
     <header>
-        Hello World!
-    </header>
+        <h1><a href="./index.html">DnD Generator</a></h1>
+        <p>Click the button below to start building your character!</p>
     <div id="names">
         <label for="name">Enter player name:</label>
         <input type="text" placeholder="Player name" name="playerName" id="playerName" class="form-input" />
@@ -81,6 +85,17 @@
             <button id="submitalign">Choose</button>
         </div>
         </form>
+        </header>
+
+         <!-- MAIN SECTION (GRID 3:111) -->
+
+    <section class="main">
+        <div class="main-form">
+            <h3>DnD Player Card</h3>
+            <br/>
+
+
+        <form>
         <div id="playerSheet">
             <div id="nameSlots">
                 <p>Player Name: <span id="nameSlot"></span></p>
@@ -94,13 +109,65 @@
                 <p>Wisdom: <button onclick="diceRoll('wis')">Roll Dice</button> <span id="wis"></span></p>
                 <p>Charisma:<button onclick="diceRoll('cha')">Roll Dice</button> <span id="cha"></span></p>
             </div>
-            <p>Race: <span id="raceSlot"></span></p>
-            <p>Class: <span id="clsSlot"></span></p>
-            <p>Alignment: <span id="alignSlot"></span></p>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./assets/js/script.js"></script>
+        </form>
+    </section>
+
+    <section class="main">
+        <div class="main-form">
+            <h3>Race</h3>
+            <br/>
+
+        <form>
+            <div id="playerSheet">
+                <p>Race: <span id="raceSlot"></span></p>
+            </div>
+
+            <br/><br/>
+
+        </form>
+        </div>
+    </section>
+
+    <section class="main">
+        <div class="main-form">
+            <h3>Class</h3>
+            <br/>
+
+        <form>
+            <div id="playerSheet">
+                <p>Class: <span id="clsSlot"></span></p>
+            </div>
+
+            <br/><br/>
+
+        </form>
+    </div>
+    </section>
+
+    <section class="main">
+        <div class="main-form">
+            <h3>Alignment</h3>
+            <br/>
+
+        <form>
+            <div id="playerSheet">
+                <p>Alignment: <span id="alignSlot"></span></p>
+            </div>
+
+            <br/><br/>
+
+        </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy;2020 by Team DnD
+    </footer>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 
 </body>
-
 </html>
