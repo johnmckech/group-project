@@ -31,13 +31,32 @@ function rollrandom() {
 var diceRollA, diceRollB, diceRollC, diceRollD;
 
 
-function diceRoll() {
+function diceRoll(attributes) {
+    console.log(attributes);
     diceRollA = 1+(Math.floor(Math.random() * 6));
     diceRollB = 1+(Math.floor(Math.random() * 6));
     diceRollC = 1+(Math.floor(Math.random() * 6));
     diceRollD = 1+(Math.floor(Math.random() * 6));
 
-};
+    console.log({diceRollA, diceRollB, diceRollC, diceRollD})
+    var result = [Number(diceRollA),Number(diceRollB),Number(diceRollC),Number(diceRollD)];
+    result.sort();
+    console.log(result);
+    result.map(Number)
+    console.log(result)
+    resultWithoutLowest = result.slice(1)
+    console.log({resultWithoutLowest});
+    var sum = {resultWithoutLowest}
+    console.log(sum)
+
+    var rollTotal = resultWithoutLowest.reduce(function(accumulator, currentValue) {
+        return accumulator + currentValue
+    })
+    console.log(rollTotal);
+    document.getElementById(attributes).textContent = rollTotal 
+}
+
+
 diceRoll();
 //strength = diceRoll();
 
