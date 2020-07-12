@@ -3,17 +3,15 @@ var characterClass = $("#class");
 var characterRace = $("#race");
 var characterAlignment = $("#alignment");
 var characterName = $("#name");
-var dndApiUrl = "https://www.dnd5eapi.co/api/";
+var dndApiUrl = "http://www.dnd5eapi.co/api/";
+var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+var targetUrl = 'https://randommer.io/api/Name?nameType=fullname&quantity=1';
 
 //Upon click of Random Name button, fetch a random name and add it to text input
 
 function rollrandom() {
     $("#charnameSlot").empty();
-
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    var targetUrl = 'https://randommer.io/api/Name?nameType=fullname&quantity=1';
-
-    fetch(proxyUrl+targetUrl, {
+    fetch(proxyUrl + targetUrl, {
         headers: {
             Accept: "*/*",
             "X-Api-Key": "e18fb123ab044372910e745648ee5fa0",
@@ -23,6 +21,9 @@ function rollrandom() {
     }).then(function (data) {
         var rolledName = data;
         $("#charnameSlot").append(rolledName);
+        //moved from random button to add the localstorage functionality to the api function
+        localStorage.charName = rolledName;
+        $("#charnameSlot").innerHTML = localStorage.charName;
     });
 };
 
@@ -33,60 +34,58 @@ var diceRollA, diceRollB, diceRollC, diceRollD;
 
 function diceRoll(attributes) {
     console.log(attributes);
-    diceRollA = 1+(Math.floor(Math.random() * 6));
-    diceRollB = 1+(Math.floor(Math.random() * 6));
-    diceRollC = 1+(Math.floor(Math.random() * 6));
-    diceRollD = 1+(Math.floor(Math.random() * 6));
+    diceRollA = 1 + (Math.floor(Math.random() * 6));
+    diceRollB = 1 + (Math.floor(Math.random() * 6));
+    diceRollC = 1 + (Math.floor(Math.random() * 6));
+    diceRollD = 1 + (Math.floor(Math.random() * 6));
 
-    console.log({diceRollA, diceRollB, diceRollC, diceRollD})
-    var result = [Number(diceRollA),Number(diceRollB),Number(diceRollC),Number(diceRollD)];
+    console.log({ diceRollA, diceRollB, diceRollC, diceRollD })
+    var result = [Number(diceRollA), Number(diceRollB), Number(diceRollC), Number(diceRollD)];
     result.sort();
     console.log(result);
     result.map(Number)
     console.log(result)
     resultWithoutLowest = result.slice(1)
-    console.log({resultWithoutLowest});
-    var sum = {resultWithoutLowest}
+    console.log({ resultWithoutLowest });
+    var sum = { resultWithoutLowest }
     console.log(sum)
 
-    var rollTotal = resultWithoutLowest.reduce(function(accumulator, currentValue) {
+    var rollTotal = resultWithoutLowest.reduce(function (accumulator, currentValue) {
         return accumulator + currentValue
     })
     console.log(rollTotal);
-    document.getElementById(attributes).textContent = rollTotal 
+    document.getElementById(attributes).textContent = rollTotal
 }
 
 
-diceRoll();
+//diceRoll();
 //strength = diceRoll();
 
 //define variables for names
-var playerName="";
-var charname="";
+var playerName = "";
+var charname = "";
 
 //capture submitted names
 //saves variable in local storage
 //calls local storage to an id
 
 
-$("#submitName").click(function(event) { 
+$("#submitName").click(function (event) {
     event.preventDefault();
     localStorage.playerName = $('#playerName').val();
     document.getElementById("nameSlot").innerHTML = localStorage.playerName;
 });
 
-$("#submitCharName").click(function(event) { 
+$("#submitCharName").click(function (event) {
     event.preventDefault();
     localStorage.charName = $('#charname').val();
-    document.getElementById("charnameSlot").innerHTML = localStorage.charName;   
+    document.getElementById("charnameSlot").innerHTML = localStorage.charName;
 });
 
 //Random button sends info same place inputted name does
 
-$("#random").click(function(event) { 
+$("#random").click(function (event) {
     event.preventDefault();
-    localStorage.charName = $('#charname').val();
-    document.getElementById("charnameSlot").innerHTML = localStorage.charName; 
     rollrandom();
 });
 
@@ -102,21 +101,23 @@ var alignment = '';
 $("#submitrace").click(function (event) {
     event.preventDefault();
     localStorage.race = $('#race').val();
-    document.getElementById("raceSlot").innerHTML = localStorage.race; 
+    document.getElementById("raceSlot").innerHTML = localStorage.race;
 });
 
 //capture the selection to look up for race
 //look up race on the D&D API
-$("lookuprace").click(function(event) {
+$("#lookuprace").click(function (event) {
     event.preventDefault();
-    race = $('#race :selected').text();
-    fetch(dndApiUrl + "races/" + charcls)
-    .then(function (response) {
-        return response.json
-    })
-        .then(function (response) {
-            console.log(response.name);
+    race = $('#race option:selected').val();
+    console.log(race);
+    console.log(dndApiUrl + "races/" + race);
+    $.get(dndApiUrl + "races/" + race)
+        .then(function () {
+            var raceQuery = dndApiUrl + "races/" + race;
+            $("#racequeryreturn").href = raceQuery;
+            $("#racequeryreturn").append(raceQuery);
         })
+
 });
 
 //capture the submitted selection for class
@@ -125,21 +126,21 @@ $("lookuprace").click(function(event) {
 $("#submitcls").click(function (event) {
     event.preventDefault();
     localStorage.charcls = $('#charcls').val();
-    document.getElementById("clsSlot").innerHTML = localStorage.charcls; 
+    document.getElementById("clsSlot").innerHTML = localStorage.charcls;
 });
 
 //capture the selection to look up for class
 //look up class on the D&D API
-$("lookupcharcls").click(function(event) {
+$("#lookupcharcls").click(function (event) {
     event.preventDefault();
     charcls = $('#charcls :selected').text();
     fetch(dndApiUrl + "classes/" + charcls)
         .then(function (response) {
             return response.json
         })
-            .then(function (response) {
-                console.log(response.name);
-            })
+        .then(function (response) {
+            console.log(response.name);
+        })
 });
 
 //capture the submitted selection for alignment
@@ -148,6 +149,6 @@ $("lookupcharcls").click(function(event) {
 $("#submitalign").click(function (event) {
     event.preventDefault();
     localStorage.alignment = $('#alignment').val();
-    document.getElementById("alignSlot").innerHTML = localStorage.alignment; 
+    document.getElementById("alignSlot").innerHTML = localStorage.alignment;
 });
 
