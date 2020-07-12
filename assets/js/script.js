@@ -1,12 +1,14 @@
-//variables for stuff
+//variables
 var characterClass = $("#class");
 var characterRace = $("#race");
 var characterAlignment = $("#alignment");
 var characterName = $("#name");
 var dndApiUrl = "https://www.dnd5eapi.co/api/";
 
-function rollName() {
-    $("#nameSlot").empty();
+//Upon click of Random Name button, fetch a random name and add it to text input
+
+function rollrandom() {
+    $("#charnameSlot").empty();
 
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     var targetUrl = 'https://randommer.io/api/Name?nameType=fullname&quantity=1';
@@ -19,13 +21,8 @@ function rollName() {
     }).then(function (response) {
         return response.json();
     }).then(function (data) {
-
-        console.log(data);
-
-        
         var rolledName = data;
-        $("#nameSlot").append(rolledName);
-        console.log(rolledName);
+        $("#charnameSlot").append(rolledName);
     });
 };
 
@@ -49,33 +46,44 @@ var playerName="";
 var charname="";
 
 //capture submitted names
-//pass names to an id to print on character CSSStyleSheet
+//saves variable in local storage
+//calls local storage to an id
 
 
 $("#submitName").click(function(event) { 
     event.preventDefault();
-    playerName = $('#playerName').val();
-    $("#nameSlot").text(playerName);
-    rollName();
+    localStorage.playerName = $('#playerName').val();
+    document.getElementById("nameSlot").innerHTML = localStorage.playerName;
 });
 
 $("#submitCharName").click(function(event) { 
     event.preventDefault();
-    charname = $('#charname').val();
-    $("#charnameSlot").text(charname);
+    localStorage.charName = $('#charname').val();
+    document.getElementById("charnameSlot").innerHTML = localStorage.charName;   
+});
+
+//Random button sends info same place inputted name does
+
+$("#random").click(function(event) { 
+    event.preventDefault();
+    localStorage.charName = $('#charname').val();
+    document.getElementById("charnameSlot").innerHTML = localStorage.charName; 
+    rollrandom();
 });
 
 //define variables for other information
 var charcls = '';
 var race = '';
 var alignment = '';
+
 //capture the submitted selection for race
-//pass race to an id to print on character sheet
+//saves variable in local storage
+//calls local storage to an id
 
 $("#submitrace").click(function (event) {
     event.preventDefault();
-    race = $('#race :selected').text();
-    $("#raceSlot").text(race);
+    localStorage.race = $('#race').val();
+    document.getElementById("raceSlot").innerHTML = localStorage.race; 
 });
 
 //capture the selection to look up for race
@@ -97,8 +105,8 @@ $("lookuprace").click(function(event) {
 
 $("#submitcls").click(function (event) {
     event.preventDefault();
-    charcls = $('#charcls :selected').text();
-    $("#clsSlot").text(charcls);
+    localStorage.charcls = $('#charcls').val();
+    document.getElementById("clsSlot").innerHTML = localStorage.charcls; 
 });
 
 //capture the selection to look up for class
@@ -120,7 +128,7 @@ $("lookupcharcls").click(function(event) {
 
 $("#submitalign").click(function (event) {
     event.preventDefault();
-    alignment = $('#alignment :selected').text();
-    $("#alignSlot").text(alignment);
+    localStorage.alignment = $('#alignment').val();
+    document.getElementById("alignSlot").innerHTML = localStorage.alignment; 
 });
 
