@@ -113,9 +113,10 @@ $("#lookuprace").click(function (event) {
     console.log(dndApiUrl + "races/" + race);
     $.get(dndApiUrl + "races/" + race)
         .then(function () {
-            var raceQuery = dndApiUrl + "races/" + race;
-            $("#racequeryreturn").href = raceQuery;
-            $("#racequeryreturn").append(raceQuery);
+            $("#racequeryreturn").empty();
+            var raceQueryLink = dndApiUrl + "races/" + race;
+            var link = 
+            $("#racequeryreturn").append("Race Info Lookup");
         })
 
 });
