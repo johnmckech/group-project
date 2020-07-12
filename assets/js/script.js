@@ -83,7 +83,7 @@ $("#submitrace").click(function (event) {
 $("lookuprace").click(function(event) {
     event.preventDefault();
     race = $('#race :selected').text();
-    fetch(dndApiUrl + "races/" + charcls)
+    fetch(dndApiUrl + "races/" + race)
     .then(function (response) {
         return response.json
     })
