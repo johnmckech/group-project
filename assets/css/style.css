@@ -51,6 +51,56 @@ footer {
     border-top: 5px solid var(--secondary-color);
 }
 
+/* HEADER GRID LAYOUT */
+
+.flex-row {
+    display: flex;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    grid-auto-rows: minmax(200px, auto);
+    flex-wrap: wrap;
+}
+
+.wrapper > div {
+    border: #333 1px dashed;
+    padding: 1em;
+    flex-wrap: wrap;
+}
+
+.slot1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.slot2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.slot3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.slot4 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
 /* MAIN SECTION */
 
 .main {
@@ -194,6 +244,52 @@ form .form-group {
 
 .checkbox-wrapper input:checked + label::after, .radio-wrapper input:checked + label::after {
     content: "";
+}
+
+/* MAIN GRID LAYOUT */
+
+.wrapper2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    grid-auto-rows: minmax(400px, auto);
+    flex-wrap: wrap;
+}
+
+.wrapper2 > div {
+    border: #333 1px dashed;
+    padding: 1em;
+    flex-wrap: wrap;
+}
+
+.box1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.box2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.box3 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.box4 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
 }
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
