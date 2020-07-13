@@ -16,36 +16,39 @@
     <header>
         <h1><a href="./index.html">DnD Generator</a></h1>
         <p>Click the button below to start building your character!</p>
-    <div id="names">
-        <label for="name">Enter player name:</label>
-        <input type="text" placeholder="Player name" name="playerName" id="playerName" class="form-input" />
-        <button type="submit" id="submitName">Submit</button>
-        <br />
-        <label for="charname">Enter character name:</label>
-        <input type="text" placeholder="Character name" name="charname" id="charname" class="form-input" />
-        <button type="submit" id="submitCharName">Submit</button>
-        <button type="submit" id="random">Random Name</button>
-    </div>
-    <div id="otherInfo">
-        <form id="raceForm">
-            <div id="raceFormInput">
-                <label for="race">Choose a race:</label>
-                <select id="race">
-                    <option value="dragonborn">Dragonborn</option>
-                    <option value="dwarf">Dwarf</option>
-                    <option value="gnome">Gnome</option>
-                    <option value="half-elf">Half-elf</option>
-                    <option value="half-orc">Half-orc</option>
-                    <option value="human">Human</option>
-                    <option value="tiefling">Tiefling</option>
-                </select>
-                <br /> <br />
-                <button id="submitrace">Choose</button>
-                <button id="lookuprace">Look up</button>
-                <div id="racequeryreturn">
+        
+        <div id="names">
+            <label for="name">Enter player name:</label>
+            <input type="text" placeholder="Player name" name="playerName" id="playerName" class="form-input" />
+            <button type="submit" id="submitName">Submit</button>
+            <br />
+            <label for="charname">Enter character name:</label>
+            <input type="text" placeholder="Character name" name="charname" id="charname" class="form-input" />
+            <button type="submit" id="submitCharName">Submit</button>
+            <button type="submit" id="random">Random Name</button>
+        </div>
+        
+        <div id="otherInfo">
+            <form id="raceForm">
+                <div id="raceFormInput">
+                    <label for="race">Choose a race:</label>
+                    <select id="race">
+                        <option value="dragonborn">Dragonborn</option>
+                        <option value="dwarf">Dwarf</option>
+                        <option value="gnome">Gnome</option>
+                        <option value="half-elf">Half-elf</option>
+                        <option value="half-orc">Half-orc</option>
+                        <option value="human">Human</option>
+                        <option value="tiefling">Tiefling</option>
+                    </select>
+                    <br /> <br />
+                    <button id="submitrace">Choose</button>
+                    <button id="lookuprace">Look up</button>
+                    <div id="racequeryreturn"></div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
+            
         <div class="charcls" class="d-none">
             <label for="charcls">Choose a class:</label>
             <select name="charcls" id="charcls">
@@ -65,9 +68,9 @@
             <br><br>
             <button id="submitcls">Choose</button>
             <button id="lookupcharcls">Look up</button>
-            <div id="charclsqueryreturn">
-            </div>
+            <div id="charclsqueryreturn"></div>
         </div>
+        
         <div class="alignment" class="d-none">
             <label for="alignment">Choose an alignment:</label>
             <select name="alignment" id="alignment">
@@ -84,8 +87,7 @@
             <br><br>
             <button id="submitalign">Choose</button>
         </div>
-        </form>
-        </header>
+    </header>
 
          <!-- MAIN SECTION (GRID 3:111) -->
 
@@ -93,23 +95,21 @@
         <div class="main-form">
             <h3>DnD Player Card</h3>
             <br/>
-
-
         <form>
-        <div id="playerSheet">
-            <div id="nameSlots">
-                <p>Player Name: <span id="nameSlot"></span></p>
-                <p>Character Name: <span id="charnameSlot"></span></p>
+            <div id="playerSheet">
+                <div id="nameSlots">
+                    <p>Player Name: <span id="nameSlot"></span></p>
+                    <p>Character Name: <span id="charnameSlot"></span></p>
+                </div>
+                <div id="attributes">
+                    <p>Strength: <button onclick="diceRoll('str')">Roll Dice</button> <span id="str"></span></p>
+                    <p>Dexterity: <button onclick="diceRoll('dex')">Roll Dice</button> <span id="dex"></span></p>
+                    <p>Constitution: <button onclick="diceRoll('con')">Roll Dice</button> <span id="con"></span></p>
+                    <p>Intelligence: <button onclick="diceRoll('int')">Roll Dice</button> <span id="int"></span></p>
+                    <p>Wisdom: <button onclick="diceRoll('wis')">Roll Dice</button> <span id="wis"></span></p>
+                    <p>Charisma:<button onclick="diceRoll('cha')">Roll Dice</button> <span id="cha"></span></p>
+                </div>
             </div>
-            <div id="attributes">
-                <p>Strength: <button onclick="diceRoll('str')">Roll Dice</button> <span id="str"></span></p>
-                <p>Dexterity: <button onclick="diceRoll('dex')">Roll Dice</button> <span id="dex"></span></p>
-                <p>Constitution: <button onclick="diceRoll('con')">Roll Dice</button> <span id="con"></span></p>
-                <p>Intelligence: <button onclick="diceRoll('int')">Roll Dice</button> <span id="int"></span></p>
-                <p>Wisdom: <button onclick="diceRoll('wis')">Roll Dice</button> <span id="wis"></span></p>
-                <p>Charisma:<button onclick="diceRoll('cha')">Roll Dice</button> <span id="cha"></span></p>
-            </div>
-        </div>
         </form>
     </section>
 
@@ -117,15 +117,12 @@
         <div class="main-form">
             <h3>Race</h3>
             <br/>
-
-        <form>
-            <div id="playerSheet">
-                <p>Race: <span id="raceSlot"></span></p>
-            </div>
-
-            <br/><br/>
-
-        </form>
+            <form>
+                <div id="playerSheet">
+                    <p>Race: <span id="raceSlot"></span></p>
+                </div>
+                <br/><br/>
+            </form>
         </div>
     </section>
 
@@ -133,38 +130,31 @@
         <div class="main-form">
             <h3>Class</h3>
             <br/>
-
-        <form>
-            <div id="playerSheet">
-                <p>Class: <span id="clsSlot"></span></p>
-            </div>
-
-            <br/><br/>
-
-        </form>
-    </div>
+            <form>
+                <div id="playerSheet">
+                    <p>Class: <span id="clsSlot"></span></p>
+                </div>
+                <br/><br/>
+            </form>
+        </div>
     </section>
 
     <section class="main">
         <div class="main-form">
             <h3>Alignment</h3>
             <br/>
-
-        <form>
-            <div id="playerSheet">
-                <p>Alignment: <span id="alignSlot"></span></p>
-            </div>
-
-            <br/><br/>
-
-        </form>
+            <form>
+                <div id="playerSheet">
+                    <p>Alignment: <span id="alignSlot"></span></p>
+                </div>
+                <br/><br/>
+            </form>
         </div>
     </section>
 
     <footer>
         &copy;2020 by Team DnD
     </footer>
-    
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
