@@ -5,7 +5,7 @@
 }
 
 :root {
-    --primary-color: #762d2dcc;
+    --primary-color: #101357;
     --secondary-color: white;
     --tertiary-color: gold;
 }
@@ -65,6 +65,7 @@ footer {
     padding-bottom: 1em;
     grid-auto-rows: minmax(200px, auto);
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .wrapper > div {
@@ -119,7 +120,7 @@ footer {
     border-width: 3px;
     border-color: var(--secondary-color);
     border-radius: 15px;
-    width: 60%;
+    width: 100%;
     margin: 3.5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -300,7 +301,7 @@ form .form-group {
         position: relative;
     }
 
-    header h1 {
+    header h1, header p {
         width: 100%;
         text-align: center;
     }
@@ -328,6 +329,10 @@ form .form-group {
         text-align: center;
     }
 
+    .wrapper {
+        flex: 0 75%;
+    }
+
     .section-title {
         width: 80%;
     }
@@ -343,6 +348,7 @@ form .form-group {
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
+
     section {
         padding: 30px 15px;
     }
@@ -369,10 +375,14 @@ form .form-group {
         flex: 100%;
     }
 
-    .service-grid-container {
+    .wrapper {
         grid-template-columns: 1fr 1fr;
     }
 
+    .wrapper2 {
+        display: block;
+    }
+    
     .service-grid-item.basic {
         grid-column: 1;
     }
@@ -399,31 +409,9 @@ form .form-group {
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
-    .main-form button {
-        width: 100%;
+    
+    .wrapper, .wrapper2 {
+        display: block;
     }
 
-    .section-title {
-        width: 95%;
-    }
-
-    .intro p {
-        width: 100%;
-    }
-
-    .trainer {
-        flex: 0 100%;
-    }
-
-    .contact-info {
-        text-align: center;
-    }
-
-    .contact-info > * {
-        flex: 0 100%;
-    }
-
-    .contact-form {
-        order: 3;
-    }
 }
