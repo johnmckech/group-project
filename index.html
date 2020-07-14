@@ -15,7 +15,7 @@
 
     <header>
         <h1><a href="./index.html">DnD Generator</a></h1>
-        <p>Click the button below to start building your character!</p>
+        <p>Follow the prompts below to build your character!</p>
         
         <section class="wrapper">
 
@@ -23,7 +23,6 @@
                 <label for="name">Enter player name:</label>
                 <input type="text" placeholder="Player name" name="playerName" id="playerName" class="form-input" />
                 <button type="submit" id="submitName">Submit</button>
-                <br />
 
                 <label for="charname">Enter character name:</label>
                 <input type="text" placeholder="Character name" name="charname" id="charname" class="form-input" />
@@ -115,7 +114,7 @@
                         <p>Constitution: <button onclick="diceRoll('con')">Roll Dice</button> <span id="con"></span></p>
                         <p>Intelligence: <button onclick="diceRoll('int')">Roll Dice</button> <span id="int"></span></p>
                         <p>Wisdom: <button onclick="diceRoll('wis')">Roll Dice</button> <span id="wis"></span></p>
-                        <p>Charisma:<button onclick="diceRoll('cha')">Roll Dice</button> <span id="cha"></span></p>
+                        <p>Charisma: <button onclick="diceRoll('cha')">Roll Dice</button> <span id="cha"></span></p>
                     </div>
                 </div>
             </form>
@@ -129,7 +128,6 @@
                     <div id="playerSheet">
                         <p>Race: <span id="raceSlot"></span></p>
                     </div>
-                    <br/><br/>
                 </form>
             </div>
         </section>
@@ -142,7 +140,6 @@
                     <div id="playerSheet">
                         <p>Class: <span id="clsSlot"></span></p>
                     </div>
-                    <br/><br/>
                 </form>
             </div>
         </section>
@@ -155,7 +152,6 @@
                     <div id="playerSheet">
                         <p>Alignment: <span id="alignSlot"></span></p>
                     </div>
-                    <br/><br/>
                 </form>
             </div>
         </section>
