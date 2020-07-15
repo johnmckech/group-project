@@ -20,19 +20,25 @@ function rollrandom() {
         return response.json();
     }).then(function (data) {
         var rolledName = data;
-        $("#charnameSlot").append(rolledName);
         //moved from random button to add the localstorage functionality to the api function
         localStorage.charName = rolledName;
-        $("#charnameSlot").innerHTML = localStorage.charName;
+        document.getElementById("charnameSlot").innerHTML = localStorage.charName;
     });
 };
+
+//Random button sends info same place inputted name does
+
+$("#random").click(function (event) {
+    event.preventDefault();
+    rollrandom();
+});
 
 
 
 var diceRollA, diceRollB, diceRollC, diceRollD;
 
 
-function diceRoll(attributes) {
+$("#str-btn").click(function (event) {
     console.log(attributes);
     diceRollA = 1 + (Math.floor(Math.random() * 6));
     diceRollB = 1 + (Math.floor(Math.random() * 6));
@@ -52,15 +58,149 @@ function diceRoll(attributes) {
 
     var rollTotal = resultWithoutLowest.reduce(function (accumulator, currentValue) {
         return accumulator + currentValue
-    })
+    });
     console.log(rollTotal);
-    document.getElementById(attributes).textContent = rollTotal
+    localStorage.strength = rollTotal;
+    document.getElementById("str").innerHTML = rollTotal;
     event.preventDefault();
-}
+});
+
+$("#dex-btn").click(function (event) {
+    console.log(attributes);
+    diceRollA = 1 + (Math.floor(Math.random() * 6));
+    diceRollB = 1 + (Math.floor(Math.random() * 6));
+    diceRollC = 1 + (Math.floor(Math.random() * 6));
+    diceRollD = 1 + (Math.floor(Math.random() * 6));
+
+    console.log({ diceRollA, diceRollB, diceRollC, diceRollD })
+    var result = [Number(diceRollA), Number(diceRollB), Number(diceRollC), Number(diceRollD)];
+    result.sort();
+    console.log(result);
+    result.map(Number)
+    console.log(result)
+    resultWithoutLowest = result.slice(1)
+    console.log({ resultWithoutLowest });
+    var sum = { resultWithoutLowest }
+    console.log(sum)
+
+    var rollTotal = resultWithoutLowest.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue
+    });
+    console.log(rollTotal);
+    localStorage.dexterity = rollTotal;
+    document.getElementById("dex").innerHTML = rollTotal;
+    event.preventDefault();
+});
+
+$("#con-btn").click(function (event) {
+    console.log(attributes);
+    diceRollA = 1 + (Math.floor(Math.random() * 6));
+    diceRollB = 1 + (Math.floor(Math.random() * 6));
+    diceRollC = 1 + (Math.floor(Math.random() * 6));
+    diceRollD = 1 + (Math.floor(Math.random() * 6));
+
+    console.log({ diceRollA, diceRollB, diceRollC, diceRollD })
+    var result = [Number(diceRollA), Number(diceRollB), Number(diceRollC), Number(diceRollD)];
+    result.sort();
+    console.log(result);
+    result.map(Number)
+    console.log(result)
+    resultWithoutLowest = result.slice(1)
+    console.log({ resultWithoutLowest });
+    var sum = { resultWithoutLowest }
+    console.log(sum)
+
+    var rollTotal = resultWithoutLowest.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue
+    });
+    console.log(rollTotal);
+    localStorage.constitution = rollTotal;
+    document.getElementById("con").innerHTML = rollTotal;
+    event.preventDefault();
+});
+
+$("#int-btn").click(function (event) {
+    console.log(attributes);
+    diceRollA = 1 + (Math.floor(Math.random() * 6));
+    diceRollB = 1 + (Math.floor(Math.random() * 6));
+    diceRollC = 1 + (Math.floor(Math.random() * 6));
+    diceRollD = 1 + (Math.floor(Math.random() * 6));
+
+    console.log({ diceRollA, diceRollB, diceRollC, diceRollD })
+    var result = [Number(diceRollA), Number(diceRollB), Number(diceRollC), Number(diceRollD)];
+    result.sort();
+    console.log(result);
+    result.map(Number)
+    console.log(result)
+    resultWithoutLowest = result.slice(1)
+    console.log({ resultWithoutLowest });
+    var sum = { resultWithoutLowest }
+    console.log(sum)
+
+    var rollTotal = resultWithoutLowest.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue
+    });
+    console.log(rollTotal);
+    localStorage.intelligence = rollTotal;
+    document.getElementById("int").innerHTML = rollTotal;
+    event.preventDefault();
+});
+
+$("#wis-btn").click(function (event) {
+    console.log(attributes);
+    diceRollA = 1 + (Math.floor(Math.random() * 6));
+    diceRollB = 1 + (Math.floor(Math.random() * 6));
+    diceRollC = 1 + (Math.floor(Math.random() * 6));
+    diceRollD = 1 + (Math.floor(Math.random() * 6));
+
+    console.log({ diceRollA, diceRollB, diceRollC, diceRollD })
+    var result = [Number(diceRollA), Number(diceRollB), Number(diceRollC), Number(diceRollD)];
+    result.sort();
+    console.log(result);
+    result.map(Number)
+    console.log(result)
+    resultWithoutLowest = result.slice(1)
+    console.log({ resultWithoutLowest });
+    var sum = { resultWithoutLowest }
+    console.log(sum)
+
+    var rollTotal = resultWithoutLowest.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue
+    });
+    console.log(rollTotal);
+    localStorage.wisdom = rollTotal;
+    document.getElementById("wis").innerHTML = rollTotal;
+    event.preventDefault();
+});
+
+$("#cha-btn").click(function (event) {
+    console.log(attributes);
+    diceRollA = 1 + (Math.floor(Math.random() * 6));
+    diceRollB = 1 + (Math.floor(Math.random() * 6));
+    diceRollC = 1 + (Math.floor(Math.random() * 6));
+    diceRollD = 1 + (Math.floor(Math.random() * 6));
+
+    console.log({ diceRollA, diceRollB, diceRollC, diceRollD })
+    var result = [Number(diceRollA), Number(diceRollB), Number(diceRollC), Number(diceRollD)];
+    result.sort();
+    console.log(result);
+    result.map(Number)
+    console.log(result)
+    resultWithoutLowest = result.slice(1)
+    console.log({ resultWithoutLowest });
+    var sum = { resultWithoutLowest }
+    console.log(sum)
+
+    var rollTotal = resultWithoutLowest.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue
+    });
+    console.log(rollTotal);
+    localStorage.charisma = rollTotal;
+    document.getElementById("cha").innerHTML = rollTotal;
+    event.preventDefault();
+});
 
 
-//diceRoll();
-//strength = diceRoll();
 
 //define variables for names
 var playerName = "";
@@ -81,13 +221,6 @@ $("#submitCharName").click(function (event) {
     event.preventDefault();
     localStorage.charName = $('#charname').val();
     document.getElementById("charnameSlot").innerHTML = localStorage.charName;
-});
-
-//Random button sends info same place inputted name does
-
-$("#random").click(function (event) {
-    event.preventDefault();
-    rollrandom();
 });
 
 //define variables for other information
@@ -159,3 +292,17 @@ $("#submitalign").click(function (event) {
     document.getElementById("alignSlot").innerHTML = localStorage.alignment;
 });
 
+function populate() {
+    document.getElementById("clsSlot").innerHTML = localStorage.charcls
+    document.getElementById("alignSlot").innerHTML = localStorage.alignment;
+    document.getElementById("raceSlot").innerHTML = localStorage.race;
+    document.getElementById("charnameSlot").innerHTML = localStorage.charName;
+    document.getElementById("str").innerHTML = localStorage.strength;
+    document.getElementById("dex").innerHTML = localStorage.dexterity;
+    document.getElementById("con").innerHTML = localStorage.constitution;
+    document.getElementById("int").innerHTML = localStorage.intelligence;
+    document.getElementById("wis").innerHTML = localStorage.wisdom;
+    document.getElementById("cha").innerHTML = localStorage.charisma;
+};
+
+populate();
