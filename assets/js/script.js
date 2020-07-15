@@ -14,7 +14,7 @@ function rollrandom() {
     fetch(proxyUrl + targetUrl, {
         headers: {
             Accept: "*/*",
-            "X-Api-Key": "e18fb123ab044372910e745648ee5fa0",
+            "X-Api-Key": "ff4e1a67e2974dfbab6d8ef5f871cf8a",
         }
     }).then(function (response) {
         return response.json();
@@ -293,32 +293,28 @@ $("#submitalign").click(function (event) {
 });
 
 
-function populate() {
-    document.getElementById("clsSlot").innerHTML = localStorage.charcls
-    document.getElementById("alignSlot").innerHTML = localStorage.alignment;
-    document.getElementById("raceSlot").innerHTML = localStorage.race;
-    document.getElementById("charnameSlot").innerHTML = localStorage.charName;
-    document.getElementById("str").innerHTML = localStorage.strength;
-    document.getElementById("dex").innerHTML = localStorage.dexterity;
-    document.getElementById("con").innerHTML = localStorage.constitution;
-    document.getElementById("int").innerHTML = localStorage.intelligence;
-    document.getElementById("wis").innerHTML = localStorage.wisdom;
-    document.getElementById("cha").innerHTML = localStorage.charisma;
-};
 
-populate();
-
-$(document).ready(function(){
-    $(".populate").click(function(){
-      $("#names").hide();
-      $(".slot2").hide();
-      $(".charcls").hide();
-      $(".alignment").hide();
+$(document).ready(function () {
+    $(".populate").click(function () {
+        $("#names").hide();
+        $(".slot2").hide();
+        $(".charcls").hide();
+        $(".alignment").hide();
+        document.getElementById("clsSlot").innerHTML = localStorage.charcls;
+        document.getElementById("alignSlot").innerHTML = localStorage.alignment;
+        document.getElementById("raceSlot").innerHTML = localStorage.race;
+        document.getElementById("charnameSlot").innerHTML = localStorage.charName;
+        document.getElementById("str").innerHTML = localStorage.strength;
+        document.getElementById("dex").innerHTML = localStorage.dexterity;
+        document.getElementById("con").innerHTML = localStorage.constitution;
+        document.getElementById("int").innerHTML = localStorage.intelligence;
+        document.getElementById("wis").innerHTML = localStorage.wisdom;
+        document.getElementById("cha").innerHTML = localStorage.charisma;
     });
-    $(".redo").click(function(){
+    $(".redo").click(function () {
         $("#names").show();
         $(".slot2").show();
         $(".charcls").show();
         $(".alignment").show();
-      });
-  });
+    });
+});
