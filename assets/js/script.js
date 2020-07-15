@@ -292,6 +292,7 @@ $("#submitalign").click(function (event) {
     document.getElementById("alignSlot").innerHTML = localStorage.alignment;
 });
 
+
 function populate() {
     document.getElementById("clsSlot").innerHTML = localStorage.charcls
     document.getElementById("alignSlot").innerHTML = localStorage.alignment;
@@ -306,3 +307,18 @@ function populate() {
 };
 
 populate();
+
+$(document).ready(function(){
+    $(".populate").click(function(){
+      $("#names").hide();
+      $(".slot2").hide();
+      $(".charcls").hide();
+      $(".alignment").hide();
+    });
+    $(".redo").click(function(){
+        $("#names").show();
+        $(".slot2").show();
+        $(".charcls").show();
+        $(".alignment").show();
+      });
+  });
