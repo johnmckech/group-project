@@ -101,7 +101,7 @@ var alignment = '';
 
 $("#submitrace").click(function (event) {
     event.preventDefault();
-    localStorage.race = $('#race').val();
+    localStorage.race = $('#race option:selected').text();
     document.getElementById("raceSlot").innerHTML = localStorage.race;
 });
 
@@ -129,7 +129,7 @@ $("#lookuprace").click(function (event) {
 
 $("#submitcls").click(function (event) {
     event.preventDefault();
-    localStorage.charcls = $('#charcls').val();
+    localStorage.charcls = $('#charcls option:selected').text();
     document.getElementById("clsSlot").innerHTML = localStorage.charcls;
 });
 
@@ -155,7 +155,7 @@ $("#lookupcharcls").click(function (event) {
 
 $("#submitalign").click(function (event) {
     event.preventDefault();
-    localStorage.alignment = $('#alignment').val();
+    localStorage.alignment = $('#alignment option:selected').text();
     document.getElementById("alignSlot").innerHTML = localStorage.alignment;
 });
 
