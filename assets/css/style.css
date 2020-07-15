@@ -66,11 +66,13 @@ footer {
   
   .btn:hover {
     box-shadow: 0 2px var(--grey);
-    top: -2px;
-  }
+    opacity: .9;
+    background-color: #f5f2d0 ;
+  } 
   .btn:active {
     box-shadow: 0 0px var(--grey);
-    top: 0;
+    opacity: .9;
+    background-color: #f5f2d0 ;
   }
 
 /* HEADER GRID LAYOUT */
