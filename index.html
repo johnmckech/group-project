@@ -24,16 +24,19 @@
                 <input type="text" placeholder="Player name" name="playerName" id="playerName" class="form-input" />
                 <button type="submit" id="submitName">Submit</button> -->
 
-                <label for="charname">Enter character name:</label>
+                <label for="charname" class="text">Enter character name:</label>
+
+                <br />
+
                 <input type="text" placeholder="Character name" name="charname" id="charname" class="form-input" />
                 <button type="submit" id="submitCharName" class="btn">Submit</button>
                 <button type="submit" id="random" class="btn">Random Name</button>
             </div>
-            
+
             <div id="otherInfo" class="flex-row slot2">
                 <form id="raceForm">
                     <div id="raceFormInput">
-                        <label for="race">Choose a race:</label>
+                        <label for="race" class="text">Choose a race:</label>
                         <br />
                         <br />
                         <select id="race" class="select-dropdown">
@@ -53,9 +56,9 @@
                     </div>
                 </form>
             </div>
-                
+
             <div class="charcls" class="d-none flex-row slot3">
-                <label for="charcls">Choose a class:</label>
+                <label for="charcls" class="text">Choose a class:</label>
                 <br />
                 <br />
                 <select name="charcls" id="charcls" class="select-dropdown">
@@ -78,9 +81,9 @@
                 <button id="lookupcharcls" class="btn">Look up</button>
                 <div id="charclsqueryreturn"></div>
             </div>
-            
+
             <div class="alignment" class="d-none flex-row slot4">
-                <label for="alignment">Choose an alignment:</label>
+                <label for="alignment" class="text">Choose an alignment:</label>
                 <br />
                 <br />
                 <select name="alignment" id="alignment" class="select-dropdown">
@@ -100,8 +103,12 @@
             </div>
             
         </section>
-        <button class="populate">Populate Character Sheet</button>
-        <button class="redo">Show Choices</button>
+
+        <br />
+
+        <button class="populate btn">Populate Character Sheet</button>
+        <button class="redo btn btn-bottom">Show Choices</button>
+
     </header>
 
          <!-- MAIN SECTION (GRID 3:111) -->
@@ -114,11 +121,11 @@
                 <br/>
             <form>
                 <div id="playerSheet">
-                    <div id="nameSlots">
+                    <div id="nameSlots" class="text">
                         <!-- <p>Player Name: <span id="nameSlot"></span></p> -->
                         <p>Character Name: <span id="charnameSlot"></span></p>
                     </div>
-                    <div id="attributes">
+                    <div id="attributes" class="text">
                         <p>Strength: <button id="str-btn">Roll Dice</button> <span id="str"></span></p>
                         <p>Dexterity: <button id="dex-btn"">Roll Dice</button> <span id="dex"></span></p>
                         <p>Constitution: <button id="con-btn">Roll Dice</button> <span id="con"></span></p>
@@ -135,8 +142,8 @@
                 <h3>Race</h3>
                 <br/>
                 <form>
-                    <div id="playerSheet">
-                        <p>Race: <span id="raceSlot"></span></p>
+                    <div id="playerSheet" class="text">
+                        <p>Selection: <span id="raceSlot"></span></p>
                     </div>
                 </form>
             </div>
@@ -147,8 +154,8 @@
                 <h3>Class</h3>
                 <br/>
                 <form>
-                    <div id="playerSheet">
-                        <p>Class: <span id="clsSlot"></span></p>
+                    <div id="playerSheet" class="text">
+                        <p>Selection: <span id="clsSlot"></span></p>
                     </div>
                 </form>
             </div>
@@ -159,8 +166,8 @@
                 <h3>Alignment</h3>
                 <br/>
                 <form>
-                    <div id="playerSheet">
-                        <p>Alignment: <span id="alignSlot"></span></p>
+                    <div id="playerSheet" class="text">
+                        <p>Selection: <span id="alignSlot"></span></p>
                     </div>
                 </form>
             </div>
