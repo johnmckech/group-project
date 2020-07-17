@@ -3,7 +3,7 @@ var characterClass = $("#class");
 var characterRace = $("#race");
 var characterAlignment = $("#alignment");
 var characterName = $("#name");
-var dndApiUrl = "http://www.dnd5eapi.co/api/";
+var dndApiUrl = "https://www.dnd5eapi.co/api/";
 var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 var targetUrl = 'https://randommer.io/api/Name?nameType=fullname&quantity=1';
 
