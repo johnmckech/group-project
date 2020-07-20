@@ -1,8 +1,8 @@
 # Project 1: Interactive Front-End Project
-Karyn English
-Blake Pangman
-John McKechnie
-Sean Suwanaloet
+* Karyn English
+* Blake Pangman
+* John McKechnie
+* Sean Suwanaloet
 
 * DnD generator app to help any Dungeons and Dragons (DnD) newcomer hit the ground running in a fresh DnD campaign. 
 
